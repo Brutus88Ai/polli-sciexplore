@@ -1,3 +1,5 @@
+// Integration with Pollinations AI Gateway
+const POLLINATIONS_API_ENDPOINT = "https://gen.pollinations.ai/v1/chat/completions";
 import { PollinationsSciClient } from "./pollinations-client.js";
 
 const client = new PollinationsSciClient();
