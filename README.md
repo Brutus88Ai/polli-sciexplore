@@ -2,6 +2,8 @@
 
 [![Made with pollinations.ai](https://raw.githubusercontent.com/pollinations/pollinations/main/packages/ui/src/brand/badge-made-with.svg)](https://pollinations.ai/?ref=badge)
 
+
+
 **Live App:** [https://brutus88ai.github.io/polli-sciexplore/](https://brutus88ai.github.io/polli-sciexplore/)  
 **Quest:** [pollinations/pollinations#19181](https://github.com/pollinations/pollinations/issues/19181)
 
