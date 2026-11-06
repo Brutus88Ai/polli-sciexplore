@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SciExplore — Interactive Science Visualizer & Simulator</title>
+    <meta name="description" content="Turn any complex scientific concept into an interactive, visual explorable simulation powered by Pollinations.ai with BYOP.">
+    <link rel="stylesheet" href="./styles.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/@pollinations/ui@0.1.0-alpha.20/dist/connect.js"></script>
+    <script type="module" src="./pollinations-client.js"></script>
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <div class="logo">SE</div>
+            <div>
+                <h1>SciExplore</h1>
+                <p>Turn Science into Interactive Explorable Models · Powered by <a href="https://pollinations.ai/?ref=badge" target="_blank" rel="noopener">pollinations.ai</a></p>
+            </div>
+        </div>
+        <div class="auth-bar">
+            <span id="auth-status" class="pill">0-Pollen Offline Mode Ready</span>
+            <polli-connect app-key="pk_zM4Wvtd1rgWXRmLP" budget="5" expiry="7" models="text"></polli-connect>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="prompt-box">
+            <h2>Select or Enter a Scientific Phenomenon</h2>
+            <p>Inspired by Anima. Generates structured SVG scientific schematics with interactive step-by-step slider animations and layered breakdowns.</p>
+            
+            <div class="topic-pills" id="topic-pills"></div>
+
+            <div class="input-row">
+                <input type="text" id="topic-input" placeholder="e.g. CRISPR-Cas9 Gene Editing, Black Hole Accretion Disk, ATP Synthase Rotary Motor...">
+            </div>
+
+            <div class="controls-row">
+                <div class="action-buttons">
+                    <button id="btn-explore-live" class="btn btn-primary">Generate Explorable Schematic (BYOP)</button>
+                    <button id="btn-explore-offline" class="btn btn-secondary">Load Pre-built Schematic (0 Pollen)</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="display-grid">
+            <div class="visualizer-card">
+                <div class="card-header">
+                    <h3 id="scene-title">CRISPR-Cas9 Gene Editing Mechanism</h3>
+                    <div class="step-controls">
+                        <button id="btn-prev-step" class="btn btn-sm">◀ Prev Phase</button>
+                        <span id="step-label" class="step-badge">Phase 1 of 4</span>
+                        <button id="btn-next-step" class="btn btn-sm">Next Phase ▶</button>
+                    </div>
+                </div>
+                <div class="svg-stage" id="svg-stage">
+                    <!-- Dynamic interactive SVG diagram -->
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>Scientific Breakdown</h3>
+                <div class="explanation-box" id="explanation-box">
+                    <!-- Scientific notes -->
+                </div>
+                <div class="key-facts" id="key-facts">
+                    <!-- Bullet insights -->
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <a href="https://pollinations.ai/?ref=badge" target="_blank" rel="noopener">
+                <img src="https://raw.githubusercontent.com/pollinations/pollinations/main/packages/ui/src/brand/badge-made-with.svg" alt="Made with pollinations.ai" height="28">
+            </a>
+            <p>Built for <a href="https://github.com/pollinations/pollinations/issues/19181" target="_blank" rel="noopener">Pollinations Quest #19181</a> · Bring Your Own Pollen (BYOP)</p>
+        </footer>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
