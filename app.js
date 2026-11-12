@@ -158,11 +158,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    document.addEventListener("polli-connect", (e) => {
-        const key = e.detail?.key || e.detail?.apiKey || e.detail?.token;
-        if (key) {
-            localStorage.setItem("polli:key", key);
-            document.getElementById("auth-status").textContent = `BYOP Connected (${key.slice(0, 6)}…)`;
-        }
-    });
+    const connectWidget = document.querySelector("polli-connect");
+    if (connectWidget) {
+        connectWidget.addEventListener("change", () => {
+            const key = connectWidget.apiKey;
+            if (key) {
+                localStorage.setItem("polli:key", key);
+                document.getElementById("auth-status").textContent = `BYOP Connected (${key.slice(0, 6)}…)`;
+            } else {
+                localStorage.removeItem("polli:key");
+                document.getElementById("auth-status").textContent = "0-Pollen Offline Mode Ready";
+            }
+        });
+    }
 });
